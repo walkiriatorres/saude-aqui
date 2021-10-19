@@ -1,4 +1,4 @@
-console.log("CLINICASinit")
+
 /*SELETORES*/
 const select = document.getElementById("bairro__selectClinicas")
 const buscarButton = document.getElementById("bairro__buttonClinicas")
@@ -13,8 +13,10 @@ const telefoneClinica = document.getElementById("telefoneClinica")
 
 try {
     fetch(
-        `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "09528351-d546-48ef-8654-42533bd2c8c3"`
+        `http://dados.recife.pe.gov.br/ca/api/3/action/datastore_search_sql?sql=SELECT * from "7ec4de7c-004c-4be1-88b1-80b70cf1250a"`
     )
+
+    
     .then((x) => x.json())
     .then((x) => x.result)
     .then((x) => {
@@ -39,7 +41,7 @@ const buscarDadosBairroClinica = (btn) => {
     
     try {
         fetch (
-            `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "09528351-d546-48ef-8654-42533bd2c8c3" WHERE bairro = '${bairro}'`
+            `http://dados.recife.pe.gov.br/ca/api/3/action/datastore_search_sql?sql=SELECT * from "7ec4de7c-004c-4be1-88b1-80b70cf1250a" WHERE bairro = '${bairro}'`
         ) .then((x) => x.json())
           .then((x) => x.result.records)
           .then((dadosBairro) => {
