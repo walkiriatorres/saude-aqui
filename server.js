@@ -3,7 +3,8 @@
 data = "";
 try {
   fetch(
-    `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "54232db8-ed15-4f1f-90b0-2b5a20eef4cf"`
+    `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "54232db8-ed15-4f1f-90b0-2b5a20eef4cf"`, {
+    mode: "no-cors"}
   ) //** consulta a api buscando todas as unidades de saude
     .then((x) => x.json()) //** Converte o resultado para JSON
     .then((x) => x.result) //** Acessa a propriedade de resultados
@@ -35,7 +36,8 @@ var buscarDadosBairro = function (btn) {
 
   try {
     fetch(
-      `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "54232db8-ed15-4f1f-90b0-2b5a20eef4cf" where bairro = '${bairro}'`
+      `http://dados.recife.pe.gov.br/api/3/action/datastore_search_sql?sql=SELECT * from "54232db8-ed15-4f1f-90b0-2b5a20eef4cf" where bairro = '${bairro}'`, {
+    mode: "no-cors"}
     ) //** Consulto o bairro específico
       .then((x) => x.json())
       .then((x) => x.result.records)
